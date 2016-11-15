@@ -123,6 +123,7 @@ void draw() {
   }
   
   offscreen.ellipse(surfaceMouse.x, surfaceMouse.y, 75, 75);
+  offscreen.filter(INVERT);
   offscreen.endDraw();
 
   // most likely, you'll want a black background to minimize
@@ -143,12 +144,12 @@ void keyPressed() {
 
   case 'l':
     // loads the saved layout
-    ks.load();
+    ks.load("keystone.xml");
     break;
 
   case 's':
     // saves the layout
-    ks.save();
+    ks.save("keystone.xml");
     break;
   
   case 'n':
